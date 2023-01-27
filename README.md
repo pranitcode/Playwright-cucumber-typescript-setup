@@ -63,7 +63,7 @@ import { page } from '../test.setup'; // check path properly // this exported fr
 
 
 Given("I navigate to spicejet url", async function () {
-  await page.goto(process.env.SPICEJET);
+  await page.goto("https://www.spicejet.com/");
 });
 
 ```
