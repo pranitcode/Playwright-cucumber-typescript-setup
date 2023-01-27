@@ -5,7 +5,7 @@
 - Open new folder in vscode and then open terminal of vscode
 - In terminal type first command
 
-
+```
 $ npm init -y // it will install  pacakaj.json file
 
 $ npm init playwright@latest // choose typescript
@@ -15,17 +15,17 @@ $ npm i -D @cucumber/cucumber@7.3.1 @cucumber/pretty-formatter
 $ npm i playwright @cucumber/cucumber typescript ts-node @types/node -D
 
 $ npx -p typescript tsc --init 
-
+```
 - Now open tsconfig.json file and write below code
 
-
+```
 
   +  "ts-node": {
   +    "transpileOnly": true
   + },
 
   "compilerOptions": {   
-
+```
 
 ### Create two new folder  
 
@@ -38,13 +38,13 @@ $ npx -p typescript tsc --init
 
 - After this open file  *Assignment.feature* write below code
 
-
+```
 Feature:spicejet ticket booking 
 Scenario:validate spicejet booking portals
 
 Given I navigate to spicejet url
 
-
+```
 
 
 
@@ -55,7 +55,7 @@ Given I navigate to spicejet url
 
 - Now open file *stepElement.ts* write below code in that file
 
-
+```
 
 import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test"; 
@@ -66,7 +66,7 @@ Given("I navigate to spicejet url", async function () {
   await page.goto(process.env.SPICEJET);
 });
 
-
+```
 *******************************
 
 
@@ -76,7 +76,7 @@ Now create one another file
 - test.setup.ts // for cucmber config
 - inside test.setup.ts   file write below code // if you have already file called *cucumber.conf.js* you can rename it to *test.setup.ts*  compare it with below code (do chages if needed)
 
-
+```
 import  { Before, BeforeAll, AfterAll, After, setDefaultTimeout } from "@cucumber/cucumber";
 import { chromium , Browser, BrowserContext , Page}  from "playwright";
 
@@ -113,14 +113,14 @@ Before(async function () {
 
 export {page, browser} // this page will used in stepElement.ts file
 
-
+```
 
 
 
 
 ### Inside package.json file add below script
 
-
+```
 
   "scripts": {
 
@@ -128,14 +128,14 @@ export {page, browser} // this page will used in stepElement.ts file
 
   },
 
-
+```
 
 Now setup is completed for runing it used below command 
-
+```
 
 $ npm run test features/Assignment.feature 
 
-
+```
 
 if you find error check file name and script test in package.json file 
 
